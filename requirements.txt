@@ -1,0 +1,12 @@
+constriction==0.3.0
+einops==0.6.0
+numpy==1.26.3
+pandas==2.2.1
+Pillow==10.3.0
+pybind11==2.10.4
+pybind11_stubgen==0.16.2
+PyYAML==6.0.1
+setuptools==68.2.2
+torch==2.0.1
+torchac==0.9.3
+torchvision==0.15.2
