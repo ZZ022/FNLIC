@@ -1,0 +1,13 @@
+prefitter_width: 32
+prefitter_depth: 3
+
+img_bitdepth: 8
+
+n_latents: 4
+latent_bitdepth: 6
+
+# hiddensizes, should be the same
+layers_arm: '24,24'
+upsampling_kernel_size: 8
+# output_ft-kernel_size-type (one of linear, residual)-activation (one of none, relu, leakyrelu, gelu)
+layers_synthesis: '24-3-linear-gelu,24-3-residual-gelu,24-3-residual-gelu,9-3-linear-none'
