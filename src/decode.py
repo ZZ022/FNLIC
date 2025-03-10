@@ -19,7 +19,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', required=True, help='Path to the bitstream', type=str)
     parser.add_argument('-o', '--output', type=str, help='Output image path.')
-    parser.add_argument('--prefitter_width', required=True, help='prefitter width', type=int, default=32)
+    parser.add_argument('--prefitter_width', help='prefitter width', type=int, default=32)
     parser.add_argument('--prefitter_depth', help='prefitter depth', type=int, default=3)
     parser.add_argument('--prefitter_ckpt', help='Path to prefitter checkpoint', type=str, default='../weight/prefitter.pth')
     # =========================== Parse arguments =========================== #

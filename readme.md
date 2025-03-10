@@ -2,7 +2,7 @@
 
 This repository contains code for reproducing results in the CVPR2025 paper *Fitted Neural Lossless Image Compression*.
 
-FNLIC paper links: [[arxiv]](https://www.baidu.com) [[cvf]](https://www.baidu.com)</p>
+FNLIC paper links: [[arxiv]](https://www.baidu.com) [cvf] (not avaiblable now)</p>
 
 ![framework](./assets/overview.png)
 
@@ -42,9 +42,20 @@ Modify the hyper-parameters in `train_fitter.py` to fit your needs.
 
 Datasets for evaluation, encoded bitstreams and overfitted models are available [here](https://drive.google.com/drive/folders/1dBsvHzIfb4W1ePYVkEmtmE4PYXYtsesf?usp=sharing). Download and extract the directories to the root of the project.
 
-Nerual codecs face cross-device consistency issues, so the bitstreams may not be decoded correctly on your device. Therefore, we provide the over-fitted models. To validate the performance, execute the  `check_model.sh` file.
+Nerual codecs face cross-device consistency issues, so the bitstreams may not be decoded correctly on your device. Therefore, we provide the over-fitted models. To validate the performance, execute the  `check_model.sh` file with
 
-We also provide the encoded bitstreams encoded with Nvidia GTX 1080ti for evaluation. To validate the performance, execute the  `check_bitstream.sh` file.
+```
+./check_model.sh <gpus> <dataset_name> <max_tasks_per_gpu>
+```
+where `<gpus>` is the comma-seperated gpu ids, `<dataset_name>` is the name of the dataset, and `<max_tasks_per_gpu>` is the maximum number of tasks per GPU. Valid dataset names are `kodak`, `clic2024`, `div2k`, `histo24`, `loveda24`, and `doc24`.
+
+
+We also provide the encoded bitstreams encoded with Nvidia GTX 1080ti for evaluation. To validate the performance, execute the  `check_bitstream.sh` file with
+
+```
+./check_bitstream.sh <gpus> <dataset_name> <max_tasks_per_gpu>
+```
+with the same arguments as above.
 
 To overfit, encode and decode the images, use the following command:
 ```

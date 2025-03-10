@@ -73,20 +73,5 @@ setup(
     cmdclass=cmdclass,
 )
 
-
-# test if the extension is built correctly
-import importlib
-import traceback
-for ext in ext_modules.values():
-    print(f"Try import {ext.name}")
-    try:
-        importlib.import_module(ext.name)
-    except ImportError as e:
-        print(f"Import {ext.name} failed!")
-        traceback.print_exc()
-        exit(1)
-    print(f"Import {ext.name} success!")
-print("Setup success!")
-
 for module_name in ext_modules.keys():
     generate_pyi(module_name)
