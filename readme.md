@@ -40,9 +40,9 @@ Modify the hyper-parameters in `train_fitter.py` to fit your needs.
 
 ## Reproducing the Results
 
-Datasets for evaluation, encoded bitstreams and overfitted models are available [here](https://drive.google.com/drive/folders/1dBsvHzIfb4W1ePYVkEmtmE4PYXYtsesf?usp=sharing). Download and extract the directories to the root of the project.
+Datasets for evaluation, overfitted models , and encoded bitstreams are available [here](https://drive.google.com/drive/folders/1dBsvHzIfb4W1ePYVkEmtmE4PYXYtsesf?usp=sharing). Download and extract the directories to the root of the project.
 
-Nerual codecs face cross-device consistency issues, so the bitstreams may not be decoded correctly on your device. Therefore, we provide the over-fitted models. To validate the performance, execute the  `check_model.sh` file with
+Nerual codecs face cross-device consistency issues, so the bitstreams may not be decoded correctly on your device. Therefore, we provide the overfitted models. To validate the performance, execute the  `check_model.sh` file with
 
 ```
 ./check_model.sh <gpus> <dataset_name> <max_tasks_per_gpu>
