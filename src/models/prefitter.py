@@ -7,28 +7,6 @@ from typing import List, OrderedDict
 from utils.helpers import space2depth, depth2space
 from utils.distribution import *
 
-# based on bitswap
-class Squeeze2d(nn.Module):
-    def __init__(self, factor:int=2) -> None:
-        super().__init__()
-        self.factor = factor
-    
-    def forward(self, x:Tensor) -> Tensor:
-        if self.factor == 1:
-            return x
-        shape = x.shape
-        height = int(shape[2])
-        width = int(shape[3])
-        n_channels = int(shape[1])
-        assert height % self.factor == 0 and width % self.factor == 0
-        x = x.view(-1, n_channels, height//self.factor, self.factor, width//self.factor, self.factor)
-        x = x.permute(0, 1, 3, 5, 2, 4).contiguous()
-        x = x.view(-1, n_channels*self.factor*self.factor, height//self.factor, width // self.factor)
-        return x
-
-    def extra_repr(self):
-        return 'factor={}'.format(self.factor)
-
 class ResidualBlock(nn.Module):
     def __init__(self, width:int) -> None:
         super().__init__()
