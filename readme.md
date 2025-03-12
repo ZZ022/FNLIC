@@ -84,6 +84,6 @@ Use `python test_inf_time.py -h` to see the detailed options.
 ## Acknowledgments
 
 Special thanks to:
-- [Cool-Chic](https://github.com/Orange-OpenSource/Cool-Chic) for the fundenmental Cool-Chic implementation.
+- [Cool-Chic](https://github.com/Orange-OpenSource/Cool-Chic) for the fundamental Cool-Chic implementation.
 - [FSAR](https://github.com/alipay/Finite_State_Autoregressive_Entropy_Coding) for the multi-table ANS implementation.
 
