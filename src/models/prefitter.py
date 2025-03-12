@@ -35,7 +35,7 @@ class PrefitterParameter():
         ATTRIBUTE_WIDTH = 25
         VALUE_WIDTH = 80
 
-        s = 'PostfitterParameter value:\n'
+        s = 'PrefitterParameter value:\n'
         s += '-------------------------------\n'
         for k in fields(self):
             s += f'{k.name:<{ATTRIBUTE_WIDTH}}: {str(getattr(self, k.name)):<{VALUE_WIDTH}}\n'
