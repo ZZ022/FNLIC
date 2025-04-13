@@ -1,0 +1,4 @@
+start_lr: 0.002
+n_itr: 130000
+n_overfit_loops: 1
+alpha_inits: [1.0, 0.01]
