@@ -2,7 +2,7 @@
 
 This repository contains code for reproducing results in the CVPR2025 paper *Fitted Neural Lossless Image Compression*.
 
-FNLIC paper links: [[arxiv]](https://www.baidu.com) [cvf] (not avaiblable now)</p>
+FNLIC paper links: [cvf]</p>
 
 ![framework](./assets/overview.png)
 
