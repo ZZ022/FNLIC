@@ -157,8 +157,6 @@ if __name__ == '__main__':
             set_logger(logging_path)
             logging.info(args)
 
-            
-            
             encoder_manager = EncoderManager(
                 preset_name='fnlic',
                 start_lr=training_cfg['start_lr'],
@@ -182,11 +180,11 @@ if __name__ == '__main__':
             bpd_min = 1e9
             bpd_min_path = ''
             for path in encoder_paths:
+                alpha_init = path.split('_')[-1].replace('.pth', '')
                 encoder = load_fnlic(os.path.join(workdir, f'fnlic_{alpha_init}.pth'), overfitter_parameter, img_t, prefitter)
                 encoder.to_device(device)
                 bitstream_path = path.replace('.pth', '.fnlic')
                 bpd = fnlic_encode(encoder, bitstream_path, device=device)
-                alpha_init = path.split('_')[-1].replace('.pth', '')
                 logging_path = os.path.join(workdir, f'fnlic_{alpha_init}.log')
                 set_logger(logging_path)
                 logging.info(f'BPD: {bpd}')
